@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>CleanSourcesPlus</name>
+    <version>1.1.2140.25748</version>
+    <fullname>CleanSourcesPlus, Version=1.1.2140.25748, Culture=neutral, PublicKeyToken=null</fullname>
+  </assembly>
+  <members>
+    <member name="T:CleanSourcesPlus.AppSettings">
+      <summary>
+ Class for returning global settings related to WinForms or Console .NET applications 
+ </summary>
+    </member>
+    <member name="P:CleanSourcesPlus.AppSettings.DebugMode">
+      <summary>
+ Returns true if a debugger is attached, or if the "debug" command line parameter was provided 
+ </summary>
+    </member>
+    <member name="P:CleanSourcesPlus.AppSettings.BuildDate">
+      <summary>
+ Returns the build date of the application 
+ </summary>
+ <remarks>
+ This is based on the build number or filesystem time for the entry assembly; "11/24/2004 5:46:12 PM" 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.Product">
+      <summary>
+ returns product name associated with this application 
+ </summary>
+ <remarks>
+ AssemblyProduct element in AssemblyInfo file 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.Company">
+      <summary>
+ returns company name associated with this application 
+ </summary>
+ <remarks>
+ AssemblyCompany element in AssemblyInfo file 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.Copyright">
+      <summary>
+ returns copyright notice associated with this application 
+ </summary>
+ <remarks>
+ AssemblyCopyright element in AssemblyInfo file 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.Description">
+      <summary>
+ returns a description of this application 
+ </summary>
+ <remarks>
+ AssemblyDescription element in AssemblyInfo file 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.Title">
+      <summary>
+ returns title of this application 
+ </summary>
+ <remarks>
+ AssemblyTitle element in AssemblyInfo file 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.CodeBaseFileName">
+      <summary>
+ returns the filename, without path, of the entry assembly for this application 
+ </summary>
+ <remarks>
+ derived from CodeBase(); "myapp.exe" 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.CodeBase">
+      <summary>
+ returns the complete path and filename of the entry assembly for this application 
+ </summary>
+ <remarks>
+ derived from CodeBase: 
+   "c:/myapp/myapp.exe" 
+   "http://myapp/myapp.exe" 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.CodeBaseFolder">
+      <summary>
+ returns the root folder where the entry assembly for this application was run from 
+ </summary>
+ <remarks>
+ derived from CodeBase(); "http://myapp/" or "c:\myapp\" 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.FullName">
+      <summary>
+ returns the unique Framework name for this application, including private key 
+ </summary>
+ <remarks>
+ derived from assembly.FullName; "webapp, Version=1.0.1789.31986, Culture=neutral, PublicKeyToken=null" 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.FriendlyName">
+      <summary>
+ returns internal .NET FriendlyName for this application 
+ </summary>
+ <remarks>
+ not really so friendly; "/LM/W3SVC/1/Root/webapp-24-127458354529761533" 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.Version">
+      <summary>
+ returns the version number of this application 
+ </summary>
+ <remarks>
+ calculated using the entry assembly and the AssemblyVersion element; "1.0.1789.31986" 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.BaseDirectory">
+      <summary>
+ returns the base folder that the application is executing from 
+ </summary>
+ <remarks>
+ equivalent to CurrentDomain.BaseDirectory property; "c:/inetpub/wwwroot/webapp/" 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.RuntimeVersion">
+      <summary>
+ Returns the version of the .NET runtime currently in use by this application 
+ </summary>
+ <remarks>
+ returned in the format "1.1.4322" 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.ConfigPath">
+      <summary>
+ Returns complete path to the currently active .config file 
+ </summary>
+ <remarks>
+ sample "c:/inetpub/wwwroot/webapp/web.config" 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.ArgumentsCollection">
+      <summary>
+ returns any command line arguments passed to this app, converted to a NameValueCollection of key/value pairs 
+ </summary>
+ <remarks>
+ Arguments can be passed via URL querystring semantics, or standard space-delimited command line style. 
+ If no key/value pairs are found, args are returned with generic key names such as arg0, arg1, etc. 
+ </remarks></member>
+    <member name="P:CleanSourcesPlus.AppSettings.ArgumentsArray">
+      <summary>
+ returns any command line arguments passed to this app as a simple, raw ArrayList 
+ </summary>
+    </member>
+    <member name="P:CleanSourcesPlus.AppSettings.HelpRequested">
+      <summary>
+ returns true if command line help was requested 
+ </summary>
+    </member>
+    <member name="P:CleanSourcesPlus.AppSettings.SecurityZone">
+      <summary>
+ Returns the current .NET security zone this code is running under 
+ </summary>
+ <remarks>
+ MyComputer, Internet, Intranet, NoZone, Trusted, Untrusted 
+ </remarks></member>
+    <member name="M:CleanSourcesPlus.AppSettings.GetCustomSection(System.String,System.Boolean)">
+      <summary>
+ returns custom NameValueSectionHandler .config section as an arbitrary object 
+ </summary>
+ <remarks>
+ this is usually used in combination with a user-defined IConfigurationSectionHandler 
+ </remarks></member>
+    <member name="M:CleanSourcesPlus.AppSettings.GetCustomSection(System.String,System.Collections.Specialized.NameValueCollection@,System.Boolean)">
+      <summary>
+ returns custom NameValueSectionHandler .config section, for xml key/value pairs 
+ </summary>
+ <remarks>
+ in .config file define configSection: 
+   &lt;section name="mySection" type="System.Configuration.NameValueSectionHandler" /&gt; 
+ the XML should look like: 
+   &lt;mySection&gt; 
+     &lt;add key="nvkey" value="nvvalue" /&gt; 
+   &lt;/mySection&gt; 
+ </remarks></member>
+    <member name="M:CleanSourcesPlus.AppSettings.GetCustomSection(System.String,System.Collections.Specialized.HybridDictionary@,System.Boolean)">
+      <summary>
+ returns custom HybridDictionary .config section, for xml key/value pairs 
+ </summary>
+ <remarks>
+ in .config file, define configSection: 
+   &lt;section name="mySection" type="System.Configuration.DictionarySectionHandler" /&gt; 
+ the XML should look like: 
+   &lt;mySection&gt; 
+     &lt;add key="dictkey" value="dictvalue" /&gt; 
+   &lt;/mySection&gt; 
+ </remarks></member>
+    <member name="M:CleanSourcesPlus.AppSettings.GetCustomSection(System.String,System.Collections.Hashtable@,System.Boolean)">
+      <summary>
+ returns custom HashTable .config section, for single xml tag 
+ </summary>
+ <remarks>
+ in .config file, define configSection: 
+   &lt;section name="mySection" type="System.Configuration.SingleTagSectionHandler" /&gt; 
+ the XML should look like: 
+   &lt;mySection tag1="value1" tag2="value2" /&gt; 
+ </remarks></member>
+    <member name="M:CleanSourcesPlus.AppSettings.GetCustomSection(System.String,System.Xml.XmlDocument@,System.Boolean)">
+      <summary>
+ returns custom XmlDocument .config section, for arbitrary xml 
+ </summary>
+ <remarks>
+ in .config file define configSection: 
+   &lt;section name="mySection" type="MyNamespace.MyConfigurationSectionHandler, MyNamespace" /&gt; 
+ the XML is arbitrary; 
+ you must define your own class that implements IConfigurationSectionHandler and returns an XmlDocument 
+ </remarks></member>
+    <member name="M:CleanSourcesPlus.AppSettings.HasArgument(System.String)">
+      <summary>
+ returns true if this named argument exists anywhere in the command line arguments 
+ </summary>
+    </member>
+    <member name="M:CleanSourcesPlus.AppSettings.MatchArgumentPattern(System.String)">
+      <summary>
+ Returns the first argument that matches the specified regular expression pattern, if any. 
+ If no match returns empty string. 
+ </summary>
+    </member>
+    <member name="M:CleanSourcesPlus.AppSettings.EntryAssembly">
+      <summary>
+ Returns the entry assembly for this application domain 
+ </summary>
+    </member>
+    <member name="M:CleanSourcesPlus.AppSettings.CheckEntryAssemblyAttribs">
+      <summary>
+ Ensures we have retrieved the entry assembly attribs at least once 
+ </summary>
+    </member>
+    <member name="M:CleanSourcesPlus.AppSettings.AssemblyAttribCollection(System.Reflection.Assembly)">
+      <summary>
+ returns NameValueCollection of all attributes for the specified assembly 
+ </summary>
+ <remarks>
+ note that Assembly* values are pulled from AssemblyInfo file in project folder 
+ 
+ Product         = AssemblyProduct string 
+ Copyright       = AssemblyCopyright string 
+ Company         = AssemblyCompany string 
+ Description     = AssemblyDescription string 
+ Title           = AssemblyTitle string 
+ 
+ in addition to all named AssemblyInfo items, adds custom CodeBase, BuildDate, Version, and FullName items. 
+ </remarks></member>
+    <member name="M:CleanSourcesPlus.AppSettings.GetURLCommandLineArgs(System.String,System.Collections.Specialized.NameValueCollection@)">
+      <summary>
+ If an URL was used to launch this app, parses that URL for any 
+ QueryString style key value pairs and adds them to a NameValueCollection 
+ </summary>
+ <remarks><member name="M:CleanSourcesPlus.AppSettings.IsURL(System.String)"><summary>
+ returns true if this string is a URL 
+ </summary></member><member name="M:CleanSourcesPlus.AppSettings.RemoveArgPrefix(System.String)"><summary>
+ If a command line argument prefix was present in the key, remove it 
+ </summary></member><member name="M:CleanSourcesPlus.AppSettings.GetKeyValueCommandLineArg(System.String,System.Collections.Specialized.NameValueCollection@)"><summary>
+ Parses any key=value pairs in the command line args into a NameValueCollection 
+ </summary>
+ <returns>true if any key=value name pairs were found and added, otherwise false</returns>
+ <remarks>
+ App.Loader.exe -remoting=0 /sample=yes c:true 
+   remoting = 0 
+   sample   = yes 
+   c        = true 
+ </remarks></member><member name="M:CleanSourcesPlus.AppSettings.CommandLineArgCollection"><summary>
+ parses command line arguments, handling special case when app was launched via URL 
+ </summary>
+ <returns />
+ <remarks>
+ note that the default .GetCommandLineArgs array is SPACE DELIMITED! 
+ </remarks></member><member name="M:CleanSourcesPlus.AppSettings.AssemblyLastWriteTime(System.Reflection.Assembly)"><summary>
+ exception-safe retrieval of LastWriteTime for this assembly. 
+ </summary>
+ <returns>File.GetLastWriteTime, or DateTime.MaxValue if exception was encountered.</returns></member><member name="M:CleanSourcesPlus.AppSettings.AssemblyBuildDate(System.Reflection.Assembly,System.Boolean)"><summary>
+ Returns DateTime this Assembly was last built. Will attempt to calculate from build number, if possible. 
+ If not, the actual LastWriteTime on the assembly file will be returned. 
+ </summary>
+ <param name="a">Assembly to get build date for</param>
+ <param name="ForceFileDate">Don't attempt to use the build number to calculate the date</param>
+ <returns>DateTime this assembly was last built</returns></member><member name="M:CleanSourcesPlus.AppSettings.EnsureKeyPresent(System.String)"><summary>
+ Throws an exception if the specified Key is not present in the appSettings section of the .config file 
+ </summary></member><member name="M:CleanSourcesPlus.AppSettings.GetString(System.String)"><summary>
+ returns the value from the specified Key in the appSettings section of the .config file 
+ </summary>
+ <returns>String. If key is not present, throws ConfigurationException.</returns></member><member name="M:CleanSourcesPlus.AppSettings.GetString(String,)"><summary>
+ returns the value from the specified Key in the appSettings section of the .config file 
+ </summary>
+ <returns>String. If key is not present, returns specified Default.</returns></member><member name="M:CleanSourcesPlus.AppSettings.GetString(String,String,)"><summary>
+ returns the value from the specified 'KeyPrefix/Key' in the appSettings section of the .config file 
+ </summary>
+ <returns>String. If key is not present, returns Default.</returns></member><member name="M:CleanSourcesPlus.AppSettings.GetBoolean(System.String)"><summary>
+ returns the value from the specified Key in the appSettings section of the .config file 
+ </summary>
+ <returns>Boolean. If key is not present, throws ConfigurationException.</returns></member><member name="M:CleanSourcesPlus.AppSettings.GetBoolean(String,)"><summary>
+ returns the value from the specified Key in the appSettings section of the .config file 
+ </summary>
+ <returns>Boolean. If key is not present or if the value cannot be converted to a boolean, returns specified Default.</returns></member><member name="M:CleanSourcesPlus.AppSettings.GetBoolean(String,String,)"><summary>
+ returns the value from the specified 'KeyPrefix/Key' in the appSettings section of the .config file 
+ </summary>
+ <returns>Boolean. If key is not present or if the value cannot be converted to a boolean, returns Default.</returns></member><member name="M:CleanSourcesPlus.AppSettings.GetInteger(System.String)"><summary>
+ returns the value from the specified Key in the appSettings section of the .config file 
+ </summary>
+ <returns>Integer. If key is not present, throws ConfigurationException.</returns></member><member name="M:CleanSourcesPlus.AppSettings.GetInteger(String,)"><summary>
+ returns the value from the specified Key in the appSettings section of the .config file 
+ </summary>
+ <returns>Integer. If key is not present or if the value cannot be converted to an integer, returns specified Default.</returns></member><member name="M:CleanSourcesPlus.AppSettings.GetInteger(String,String,)"><summary>
+ returns the value from the specified 'KeyPrefix/Key' in the appSettings section of the .config file 
+ </summary>
+ <returns>Integer. If key is not present or if the value cannot be converted to an integer, returns Default.</returns></member><member name="M:CleanSourcesPlus.AppSettings.MakePathRooted(System.String)"><summary>
+ forces a relative path to become rooted relative to the current app BaseFolder 
+ </summary>
+ <remarks>
+ do not use ~/, it is unnecessary; we aren't using Server.MapPath. 
+ </remarks></member><member name="M:CleanSourcesPlus.AppSettings.GetPath(System.String)"><summary>
+ returns a Path from the specified Key in the appSettings section of the .config file 
+ </summary>
+ <remarks>
+ If the path is not rooted, it is assumed to be relative to the current web root, and will be pathed appropriately 
+ If the key does not exist, a ConfigurationException will be thrown 
+ </remarks>
+ <returns>A rooted filesystem path</returns></member><member name="M:CleanSourcesPlus.AppSettings.GetPath(String,)"><summary>
+ returns a Path from the specified Key in the appSettings section of the .config file 
+ </summary>
+ <remarks>
+ If the key does not exist, the default is used. 
+ If the path is not rooted, it is assumed to be relative to the current web root, and will be pathed appropriately 
+ </remarks>
+ <returns>A rooted filesystem path</returns></member><member name="M:CleanSourcesPlus.AppSettings.GetPath(String,String,)"><summary>
+ returns a Path from the specified 'KeyPrefix/Key' in the appSettings section of the .config file 
+ </summary>
+ <remarks>
+ If the key does not exist, the default is used. 
+ If the path is not rooted, it is assumed to be relative to the current web root, and will be pathed appropriately 
+ </remarks>
+ <returns>A rooted filesystem path</returns></member><member name="T:CleanSourcesPlus.Clean"><summary>
+ 
+ This is a console application to clean .net projects by removing the following: 
+ 
+   * bin, obj and setup directories 
+   * all source bindings 
+   * any user settings 
+ 
+ This is useful when sharing projects with other developers. 
+ 
+ Code based on Omar Shahine's "Clean Sources" 
+    http://wiki.shahine.com/default.aspx/MyWiki/CleanSources.html 
+ 
+ Jeff Atwood 
+ http://www.codinghorror.com/blog/ 
+ 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.ZipDirectory(System.String)"><summary>
+ Creates a ZIP file containing the contents of the folder 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.GenerateFileList(System.String)"><summary>
+ Builds an ArrayList containing all the files under a specific path 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.CleanDirectory(System.String,System.Collections.Specialized.StringCollection@)"><summary>
+ Recursively builds a collection of paths to be deleted. 
+ Also remove source control bindings while we're at it. 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.IsDirectory(System.String)"><summary>
+ Returns true if the provided path is a directory 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.DeletePaths(System.Collections.Specialized.StringCollection)"><summary>
+ Delete the provided collection of files/directories 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.GetFileReadOnly(System.String)"><summary>
+ Returns true if a file is marked Read-Only 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.SetFileReadOnly(System.String,System.Boolean)"><summary>
+ Toggles the Read-Only attribute on a file 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.DeletePath(System.String)"><summary>
+ Deletes a file or directory, with exception trapping 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.DumpException(System.Exception,System.String,System.String)"><summary>
+ Dumps an exception to the console 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.RemoveSourceBindings(System.String)"><summary>
+ Removes source control bindings, if present, from the text file. 
+ This is hard-coded to work only against VS.NET solution files. 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.ReadFile(System.String)"><summary>
+ Reads a text file from disk 
+ </summary></member><member name="M:CleanSourcesPlus.Clean.WriteFile(System.String,System.String)"><summary>
+ Writes a text file to disk 
+ </summary></member></remarks></member>
+  </members>
+</doc>
